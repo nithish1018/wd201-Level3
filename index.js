@@ -9,30 +9,24 @@ const todoList = () => {
     let myDate=new Date();
     let todayDate=myDate.toISOString().split("T")[0];
     const overdue = () => {
-      // Write the date check condition here and return the array of overdue items accordingly.
-      // FILL YOUR CODE HERE
       let overduearray= all.filter((task) => Date.parse(task.dueDate)<Date.parse(todayDate));
       return overduearray;
 
     }
   
     const dueToday = () => {
-      // Write the date check condition here and return the array of todo items that are due today accordingly.
-      // FILL YOUR CODE HERE
       let todayduearray= all.filter((task) => task.dueDate === todayDate);
       return todayduearray;
     }
   
     const dueLater = () => {
-      // Write the date check condition here and return the array of todo items that are due later accordingly.
-      // FILL YOUR CODE HERE
+      
       let duelaterarray= all.filter((task) => Date.parse(task.dueDate)>Date.parse(todayDate));
       return duelaterarray;
     }
   
     const toDisplayableList = (list) => {
-      // Format the To-Do list here, and return the output string as per the format given above.
-      // FILL YOUR CODE HERE
+      
       let displayarray = list.map((work) => {
         let workstatus = work.completed ? 'x' : ' ';
         if (work.dueDate===todayDate) {
